@@ -1,0 +1,93 @@
+// reusable selectors
+
+
+//logo
+.logo{
+    width: 6.875rem;
+    height: 6.875rem;
+    border: 3px solid $color-secondary;
+    border-radius: 50%;
+    margin-right: 1.25rem;
+    & img{
+    width: 6.875rem;
+    height: 6.875rem;
+    }
+}
+
+//btn 
+.main-btn{
+    width: 170px;
+    height: 45px;
+    background-color: transparent;
+    color: $color-secondary;
+    border: 1px solid $color-secondary;
+    font-family: $font-sub;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    &:hover{
+        background-color: $color-secondary;
+        color: $color-primary;
+    }
+}
+
+
+//card
+
+.card{
+    position: relative;
+    height: 55vh;
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: hidden;
+    background-color: $color-primary;
+    .card-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+       opacity: 0.7;
+    }
+    .card-overlay{
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+	    top: 0;
+	    left: -100%;
+	    background-color:rgba(213,171,84,0.4);
+        color: $font-white;
+	    transition:	all 0.6s ease;
+        padding-left: 0px;
+        
+        .card-overlay-heading{
+           font-size: $font-lg;
+           font-family: $font-main;
+           font-weight: lighter;
+        }
+        .card-overlay-paragraph{
+            font-size: $font-md;
+            font-family: $font-main;
+            font-weight: lighter;
+            margin-bottom: 3rem;
+        }
+        .card-overlay-btn{
+            font-family: $font-sub;
+            height: 40px;
+            width: 150px;
+            background-color: $font-white;
+            color: $color-secondary;
+            border-radius: 50px;
+            border: 2px solid $color-secondary;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+    &:hover .card-overlay{
+        left: 0;
+    }
+}

@@ -1,0 +1,187 @@
+// navbar, section, footer
+
+.navbar{
+    position: relative;
+    top: 60px;
+    left: 92.2vw;
+    z-index: 1000;
+    .hamburger-menu{
+        position: fixed;
+        .menu-line{
+        background-color: $color-secondary;
+        width: 40px;
+        height: 4px;
+        margin-bottom: 9px;
+        }
+    }
+    .navbar-navigation{
+        display: none;
+    }
+}
+
+.header{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+    'brand'
+    'header-banner';
+    background: url(/images/bg.jpeg) no-repeat center;
+    
+    &::before{
+        content: '';
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+.brand {
+    display: flex;
+    align-items: center;
+    grid-area: brand;
+    position: absolute;
+    top: 29%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    .main-name{
+        @include mainName($font-lg);
+    }
+    .sub-name{
+        @include mainName($font-sm, $font-sub);
+    }
+    }
+.header-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-51%, -48%);
+    grid-area: header-banner;
+    .main-heading{
+        @include title(6.2rem);
+        margin-bottom: 0.5rem;
+    }
+    .sub-heading{
+        @include subTitle(3.6rem);
+        margin-bottom: 2rem;
+    }
+}
+}
+
+.about-us{
+    height: 90vh;
+    width: 100vw;
+    background-color: $color-primary;
+    display: grid;
+    grid-template-areas: 
+        'a-left a-right'
+    ;
+    align-items: center;
+    .about-us-left{
+        position: relative;
+        left: -13rem;
+        grid-area: a-left;
+        width: 50vw;
+        opacity: 0.7;
+        & img{
+            width: 48rem;
+            height: auto;
+        }
+    }
+    .about-us-right{
+        width: 50vw;
+        grid-area: a-right;
+        text-align: center;
+        position: relative;
+        left: -5rem;
+        .main-heading{
+            @include title(6rem);
+            margin-bottom: 3rem;
+        }
+        .sub-heading{
+            @include mainName($font-sm, $font-sub);
+            margin-bottom: 5rem;
+        }
+        .description{
+            width: 95%;
+            font-size: 1.5rem;
+            font-family: $font-sub;
+            color: $font-gray;
+            text-indent: 3rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+            text-align: justify;
+        }
+        .stars{
+            color: $color-secondary;
+            margin-bottom: 3rem;
+            .star{
+                margin-right: 0.6rem;
+            }
+        }
+    }
+}
+ 
+.gallery{
+    width: 100vw;
+    .cards-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: stretch;
+        align-items: stretch;
+
+    }
+}
+
+.footer{
+    background-color: $color-primary;
+    .footer-header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3rem;
+        .logo{
+            @extend .logo;
+        }
+        .main-name{
+            @include mainName();
+        }
+        .sub-name{
+            @include mainName($font-sm, $font-sub);
+        }
+    }
+    .footer-social-media{
+        height: 5rem;
+        width: 100%;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        .social-media{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .social-media-item{
+            list-style: none;
+            font-size: 3rem;
+            margin-left: 2rem;
+           .social-media-link{
+               color: $font-gray;
+           }
+        }
+        }
+    }
+    .footer-copyright{
+        @include subTitle($font-sm);
+        letter-spacing: 0.2rem;
+        padding-bottom: 5rem;
+    }
+}

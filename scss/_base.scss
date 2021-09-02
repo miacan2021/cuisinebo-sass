@@ -1,0 +1,43 @@
+// variables, mixins, placeholder, root, *, html, body
+$color-primary: #262626;
+$color-secondary: #D4AB54;
+$font-gray: #BBBBBB;
+$font-white: #FFFFFF;
+
+$font-lg: 3rem;
+$font-md: 2rem;
+$font-sm: 1rem;
+
+$font-main: 'Nunito';
+$font-sub: 'Josefin Sans';
+$font-other: 'Dancing Script';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@mixin mainName($fontSize: $font-lg, $fontFam: $font-main){
+    font-size: $fontSize;
+    font-family: $fontFam;
+    color: $font-gray;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 0.125rem;
+}
+
+@mixin title($fontSize: $font-lg){
+    font-size: $fontSize;
+    font-family: $font-other;
+    color: $color-secondary;
+    text-align: center;
+    font-weight: lighter;
+}
+
+@mixin subTitle($fontSize: $font-lg){
+    font-size: $fontSize;
+    font-family: $font-sub;
+    color: $font-gray;
+    text-align: center;
+    font-weight: 300;
+}
